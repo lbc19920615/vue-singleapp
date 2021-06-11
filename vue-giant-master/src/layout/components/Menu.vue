@@ -9,8 +9,8 @@
       <div>
         <template v-for="collectMenu in collectMenus">
           <div
-            class="collect-menu"
             :key="collectMenu.path"
+            class="collect-menu"
             @click="toMenu(collectMenu.path)"
           >
             {{ collectMenu.title }}
@@ -18,11 +18,11 @@
         </template>
       </div>
     </div>
-    <div class="two-menu" v-show="showTwoMenu">
+    <div v-show="showTwoMenu" class="two-menu">
       <template v-for="(menu, index1) in menus">
-        <div class="onetitle" :key="menu.appPath">{{ menu.title }}</div>
+        <div :key="menu.appPath" class="onetitle">{{ menu.title }}</div>
         <template v-for="(cmenu, index2) in menu.child">
-          <div class="twotitle" :key="menu.appPath + cmenu.path">
+          <div :key="menu.appPath + cmenu.path" class="twotitle">
             <div @click="clickMenu(menu, cmenu)">{{ cmenu.title }}</div>
             <div>
               <i

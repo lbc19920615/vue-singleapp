@@ -6,7 +6,7 @@
       <router-view v-if="showView" />
       <div v-else id="root-view"></div>
     </div>
-    <main-menu ref="mainMenu" class="main-menu" v-show="showMenu"></main-menu>
+    <main-menu v-show="showMenu" ref="mainMenu" class="main-menu"></main-menu>
     <main-login ref="mainLogin"></main-login>
   </div>
 </template>

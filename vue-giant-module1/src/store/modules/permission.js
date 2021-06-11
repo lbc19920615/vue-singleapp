@@ -50,7 +50,6 @@ const mutations = {
 
 const actions = {
   generateRoutes({ commit }, roles) {
-    debugger
     let accessedRoutes
     if (roles.includes('admin')) {
       accessedRoutes = routers || []

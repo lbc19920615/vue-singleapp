@@ -17,9 +17,9 @@
       <menu-item
         v-for="child in item.children"
         :key="child.path"
-        :isNest="true"
+        :is-nest="true"
         :item="child"
-        :basePath="url(item.path)"
+        :base-path="url(item.path)"
       />
     </el-submenu>
   </div>

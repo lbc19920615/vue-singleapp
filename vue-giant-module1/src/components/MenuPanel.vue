@@ -1,3 +1,4 @@
+<script src="../../../../vue-free-table/src/table.js"></script>
 <template>
   <div class="menu-panel">
     <el-scrollbar wrap-class="scrollbar-wrapper">
@@ -9,8 +10,8 @@
       >
         <menu-item
           v-for="route in routes"
-          :isNest="false"
           :key="route.path"
+          :is-nest="false"
           :item="route"
         />
       </el-menu>

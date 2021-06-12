@@ -9,7 +9,7 @@ const menu = [
         title: '子系统菜单一'
       },
       {
-        path: '/page2',
+        path: '/page2/index',
         title: '子系统菜单二'
       },
       {

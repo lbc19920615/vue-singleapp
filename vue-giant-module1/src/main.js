@@ -7,10 +7,6 @@ import store from './store'
 import './plugins/element.js'
 import '@/utils/permission.js'
 
-import JsonViewer from 'vue-json-viewer'
-// Import JsonViewer as a Vue.js plugin
-Vue.use(JsonViewer)
-
 Vue.config.productionTip = false
 
 import VueLogger from 'vuejs-logger'

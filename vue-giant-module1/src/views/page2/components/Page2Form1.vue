@@ -10,13 +10,15 @@
         />
       </el-col>
       <el-col :span="12">
-        <json-viewer
-          :value="formSchema.value"
-          :expand-depth="5"
+        <vue-json-editor
+          v-model="formSchema.value"
+          :expanded-on-start="true"
+          :mode="'view'"
           copyable
           boxed
           sort
-        ></json-viewer>
+          :show-btns="false"
+        ></vue-json-editor>
       </el-col>
     </el-row>
     <div class="a-layout-row">
@@ -27,12 +29,13 @@
 </template>
 
 <script>
+import VueJsonEditor from 'vue-json-editor'
 import SubmitButton from '@/components/SubmitButton'
 const ComponentName = 'Page2Form1'
 
 export default {
   name: ComponentName,
-  components: {SubmitButton},
+  components: {VueJsonEditor, SubmitButton},
   data() {
     return {
       formSchema: {

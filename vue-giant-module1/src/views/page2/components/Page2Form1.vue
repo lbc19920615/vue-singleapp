@@ -11,7 +11,6 @@
       <el-button @click="resetForm">重置</el-button>
     </div>
   </div>
-
 </template>
 
 <script>
@@ -28,15 +27,27 @@ export default {
         name: ComponentName + 'Form',
         type: 'object',
         properties: {
-          fileName: {
+          propString: {
             type: 'string',
             ui: {
               label: 'String'
             },
-            'rules': {
+            rules: {
               required: {
                 value: true,
                 errMsg: '必填'
+              }
+            }
+          },
+          propIdCard: {
+            type: 'string',
+            ui: {
+              label: '身份证'
+            },
+            rules: {
+              idValidator: {
+                value: true,
+                errMsg: '身份证号输入错误'
               }
             }
           }

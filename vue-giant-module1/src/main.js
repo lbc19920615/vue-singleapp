@@ -25,13 +25,20 @@ const options = {
 Vue.use(VueLogger, options)
 
 // Form start
-import vueNcform from '@ncform/ncform'
+import vueNcform from '@ncform/ncform/dist/vueNcform'
 import ncformStdComps from '@ncform/ncform-theme-elementui'
 import ncformCusComps from '@/components/NcFormCustom'
-Vue.use(vueNcform, { extComponents: {
-  ...ncformStdComps,
-  ...ncformCusComps
-} /* lang: 'zh-cn'*/ })
+import ncformCusRules from '@/components/NcFormRules'
+
+Vue.use(vueNcform, {
+  extComponents: {
+    ...ncformStdComps,
+    ...ncformCusComps
+  },
+  extRules: [
+    ncformCusRules
+  ]
+})
 // Form end
 
 let instance = null

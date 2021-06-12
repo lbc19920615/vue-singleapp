@@ -21,8 +21,8 @@ export default {
 #app {
   width: 100%;
   height: 100%;
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   display: flex;
   .panel {
     flex: 1;

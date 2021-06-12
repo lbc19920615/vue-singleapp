@@ -1,5 +1,10 @@
 <template>
   <div>
+    <RemoteOptions
+      :request-method="myRequestMethod"
+      label-key="name"
+      value-key="id"
+    ></RemoteOptions>
     <el-row :gutter="20">
       <el-col :span="12">
         <ncform
@@ -31,11 +36,34 @@
 <script>
 import VueJsonEditor from 'vue-json-editor'
 import SubmitButton from '@/components/SubmitButton'
+import RemoteOptions from '@/components/FreeForm/RemoteOptions'
+
+const setMixin = {
+  methods: {
+    myRequestMethod() {
+      return new Promise(resolve => {
+        const options = [
+          {
+            id: '111',
+            name: '1111'
+          }
+        ]
+        setTimeout(() => {
+          resolve(options)
+        }, 1000)
+      })
+    }
+  }
+}
+
 const ComponentName = 'Page2Form1'
 
 export default {
   name: ComponentName,
-  components: {VueJsonEditor, SubmitButton},
+  components: {RemoteOptions, VueJsonEditor, SubmitButton},
+  mixins: [
+    setMixin
+  ],
   data() {
     return {
       formSchema: {

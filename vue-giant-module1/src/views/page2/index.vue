@@ -12,9 +12,6 @@
 import Page2Form1 from '@/views/page2/components/Page2Form1'
 export default {
   name: 'Page2',
-  components: {Page2Form1},
-  mounted() {
-    this.$axios.get('/basic-table').then(console.log)
-  }
+  components: {Page2Form1}
 }
 </script>

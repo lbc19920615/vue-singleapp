@@ -18,6 +18,7 @@ import MainLogin from '@/layout/components/MainLogin'
 // 导入乾坤函数
 import { registerMicroApps, start } from 'qiankun'
 import axios from '@/utils/request'
+import {alUtils} from '../module/al'
 
 export default {
   name: 'Layout',
@@ -41,7 +42,10 @@ export default {
     const msg = {
       data: this.$store.getters,
       fns: [],
-      prototype: [{ name: '$axios', value: axios }]
+      prototype: [
+        { name: '$axios', value: axios },
+        { name: '$alUtils', value: alUtils }
+      ]
     }
     // 注册子应用,可以根据登录后的权限加载对应的子项目
     registerMicroApps(

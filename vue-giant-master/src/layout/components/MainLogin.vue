@@ -71,12 +71,12 @@ export default {
       })
     },
     initLogin() {
-      setInterval(() => {
-        const now = new Date()
-        if (now - this.onWeb > this.timeout) {
-          this.showLogin = true
-        }
-      }, 20 * 1000)
+      // setInterval(() => {
+      //   const now = new Date()
+      //   if (now - this.onWeb > this.timeout) {
+      //     this.showLogin = true
+      //   }
+      // }, 20 * 1000)
     },
     doOnWeb() {
       this.onWeb = new Date()

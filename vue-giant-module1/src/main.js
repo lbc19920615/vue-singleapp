@@ -77,6 +77,7 @@ function render(props = {}) {
 
 export async function mount(props) {
   initStore(props)
+  bootstrap(props)
   if (props.data.userInfo.roles) {
     store.commit('permission/SET_ROLES', props.data.userInfo.roles)
   }

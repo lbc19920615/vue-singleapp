@@ -1,11 +1,24 @@
 <template>
   <div>
-    <ncform
-      ref="ncForm"
-      v-model="formSchema.value"
-      :form-schema="formSchema"
-      :form-name="formSchema.name"
-    />
+    <el-row :gutter="20">
+      <el-col :span="12">
+        <ncform
+          ref="ncForm"
+          v-model="formSchema.value"
+          :form-schema="formSchema"
+          :form-name="formSchema.name"
+        />
+      </el-col>
+      <el-col :span="12">
+        <json-viewer
+          :value="formSchema.value"
+          :expand-depth="5"
+          copyable
+          boxed
+          sort
+        ></json-viewer>
+      </el-col>
+    </el-row>
     <div class="a-layout-row">
       <SubmitButton @submit="submitForm">提交</SubmitButton>
       <el-button @click="resetForm">重置</el-button>
@@ -48,6 +61,28 @@ export default {
               idValidator: {
                 value: true,
                 errMsg: '身份证号输入错误'
+              }
+            }
+          },
+          colors: {
+            'type': 'array',
+            'ui': {
+              'widget': 'checkbox',
+              'widgetConfig': {
+                'enumSource': [
+                  {
+                    'value': 1,
+                    'label': 'red'
+                  },
+                  {
+                    'value': 2,
+                    'label': 'green'
+                  },
+                  {
+                    'value': 3,
+                    'label': 'blue'
+                  }
+                ]
               }
             }
           }

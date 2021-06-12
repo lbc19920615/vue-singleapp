@@ -20,7 +20,27 @@ export const routers = [
       title: '页面二',
       icon: 'el-icon-setting'
     },
-    component: () => import('@/views/page2')
+    component: () => import('@/views/routeview'),
+    children: [
+      {
+        path: 'index',
+        name: 'Index',
+        meta: {
+          title: '页面二 - Index',
+          icon: 'el-icon-setting'
+        },
+        component: () => import('@/views/page2/index')
+      },
+      {
+        path: 'basic',
+        name: 'Basic',
+        meta: {
+          title: '页面二 - Basic',
+          icon: 'el-icon-setting'
+        },
+        component: () => import('@/views/page2/basic')
+      }
+    ]
   },
   {
     path: '/page3parent',

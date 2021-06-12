@@ -1,14 +1,10 @@
 <template>
   <div class="page2">
+    <router-link to="basic">basic</router-link>
+
     <Page2Form1></Page2Form1>
 
-    <h2>官方DEMO</h2>
-    <iframe
-      class="a-iframe-block"
-      src="https://ncform.github.io/ncform/ncform-theme-elementui/index.html"
-      frameborder="0"
-      style="height: 560px"
-    ></iframe>
+    <router-view></router-view>
   </div>
 </template>
 

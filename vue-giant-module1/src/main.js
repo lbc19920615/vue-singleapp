@@ -66,6 +66,13 @@ function render(props = {}) {
     store,
     render: h => h(App)
   }).$mount('#app')
+  // 解决微应用vue devtools挂载失败问题
+  if (process.env.NODE_ENV === 'development') {
+    // vue-devtools  加入此处代码即可
+    const instanceDiv = document.createElement('div')
+    instanceDiv.__vue__ = instance
+    document.body.appendChild(instanceDiv)
+  }
 }
 
 export async function mount(props) {

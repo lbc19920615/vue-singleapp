@@ -1,5 +1,5 @@
 <template>
-  <div class="free-table">
+  <div class="page1 free-table">
     <div class="example-table-box">
       <p>基础表格</p>
       <free-table

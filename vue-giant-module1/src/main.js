@@ -1,4 +1,5 @@
 import './public-path'
+import './styles/index.scss'
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
@@ -7,6 +8,31 @@ import './plugins/element.js'
 import '@/utils/permission.js'
 
 Vue.config.productionTip = false
+
+import VueLogger from 'vuejs-logger'
+const isProduction = process.env.NODE_ENV === 'production'
+
+const options = {
+  isEnabled: true,
+  logLevel: isProduction ? 'error' : 'debug',
+  stringifyArguments: false,
+  showLogLevel: true,
+  showMethodName: true,
+  separator: '|',
+  showConsoleColors: true
+}
+
+Vue.use(VueLogger, options)
+
+// Form start
+import vueNcform from '@ncform/ncform'
+import ncformStdComps from '@ncform/ncform-theme-elementui'
+import ncformCusComps from '@/components/NcFormCustom'
+Vue.use(vueNcform, { extComponents: {
+  ...ncformStdComps,
+  ...ncformCusComps
+} /* lang: 'zh-cn'*/ })
+// Form end
 
 let instance = null
 

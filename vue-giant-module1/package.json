@@ -8,12 +8,17 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@ncform/ncform": "^1.7.9",
+    "@ncform/ncform-common": "^1.7.9",
+    "@ncform/ncform-theme-elementui": "^1.7.9",
     "core-js": "^3.6.4",
     "element-ui": "^2.4.5",
+    "lbc-scsslib": "^0.2.0",
     "nprogress": "^0.2.0",
     "qiankun": "^2.4.2",
     "vue": "^2.6.11",
     "vue-router": "^3.1.5",
+    "vuejs-logger": "^1.5.5",
     "vuex": "^3.1.2"
   },
   "devDependencies": {

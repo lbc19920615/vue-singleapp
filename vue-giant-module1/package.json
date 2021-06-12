@@ -13,6 +13,7 @@
     "@ncform/ncform-theme-elementui": "^1.7.9",
     "core-js": "^3.6.4",
     "element-ui": "^2.4.5",
+    "enumify": "^2.0.0",
     "lbc-scsslib": "^0.2.0",
     "nprogress": "^0.2.0",
     "qiankun": "^2.4.2",

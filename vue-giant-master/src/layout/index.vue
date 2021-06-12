@@ -52,14 +52,14 @@ export default {
           container: '#root-view',
           activeRule: '/app1',
           props: msg
-        },
-        {
-          name: 'module-app2',
-          entry: '//localhost:8082',
-          container: '#root-view',
-          activeRule: '/app2',
-          props: msg
         }
+        // {
+        //   name: 'module-app2',
+        //   entry: '//localhost:8082',
+        //   container: '#root-view',
+        //   activeRule: '/app2',
+        //   props: msg
+        // }
       ],
       {
         beforeLoad: [

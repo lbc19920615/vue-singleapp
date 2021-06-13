@@ -1,5 +1,5 @@
 <template>
-  <div class="page1 free-table">
+  <com-page class="page1 free-table">
     <div class="example-table-box">
       <p>基础表格</p>
       <free-table
@@ -9,7 +9,7 @@
         :column="basicColumn"
       ></free-table>
     </div>
-  </div>
+  </com-page>
 </template>
 
 <script>

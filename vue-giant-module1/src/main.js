@@ -1,5 +1,6 @@
 import './public-path'
 import './styles/index.scss'
+
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
@@ -10,6 +11,10 @@ import './plugins/element.js'
 import './plugins/ncForm'
 import './plugins/views'
 import {bootstrapLoggerPlugin} from '@/plugins/logger'
+
+import VueHighlightJS from 'vue-highlightjs'
+import 'highlight.js/styles/vs2015.css'
+Vue.use(VueHighlightJS)
 
 const isProduction = process.env.NODE_ENV === 'production'
 

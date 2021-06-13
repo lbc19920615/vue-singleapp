@@ -5,7 +5,7 @@
 </style>
 
 <template>
-  <div
+  <com-page
     class="page2"
   >
     <el-tabs
@@ -18,7 +18,7 @@
     </el-tabs>
 
     <router-view></router-view>
-  </div>
+  </com-page>
 </template>
 
 <script>

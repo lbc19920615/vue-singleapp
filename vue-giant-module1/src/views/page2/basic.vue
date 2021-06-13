@@ -7,7 +7,7 @@ $sel: ".basic";
 </style>
 
 <template>
-  <div>
+  <com-page>
     <h2>官方DEMO</h2>
     <iframe
       class="a-iframe-block"
@@ -15,7 +15,7 @@ $sel: ".basic";
       frameborder="0"
       style="height: 560px"
     ></iframe>
-  </div>
+  </com-page>
 </template>
 
 <script>

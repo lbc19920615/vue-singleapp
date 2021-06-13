@@ -10,13 +10,10 @@
           ></RemoteOptions>
         </el-col>
         <el-col :span="12">
-          <pre v-highlightjs>
-<code
-class="hljs"
-      :class="doc.remoteSelect[0].cls"
-v-html="doc.remoteSelect[0].content"
-></code>
-          </pre>
+          <my-highlight
+            :language="doc.remoteSelect[0].lang"
+            :content="doc.remoteSelect[0].content"
+          ></my-highlight>
         </el-col>
       </el-row>
       <h3>RemoteOptions Attributes</h3>
@@ -39,9 +36,10 @@ import FreeTable from '@/components/FreeTable'
 import RemoteOptions from '@/components/FreeForm/RemoteOptions'
 import {remoteOptionsDemo1Mixin} from '@/views/page3/mixins/common'
 import {docMixin} from '@/views/page3/mixins/doc'
+import MyHighlight from '@/components/Myhighlight/MyHighlight'
 export default {
   name: 'Page3',
-  components: {RemoteOptions, FreeTable},
+  components: {MyHighlight, RemoteOptions, FreeTable},
   mixins: [
     remoteOptionsDemo1Mixin,
     docMixin

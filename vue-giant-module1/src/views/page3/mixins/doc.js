@@ -1,8 +1,15 @@
 import escape from 'lodash/escape'
 
-function registerLanguage(type, content) {
+/**
+ * 注册一个language
+ * @param lang
+ * @param content
+ * @returns {{cls: string[], lang, content}}
+ */
+function registerLanguage(lang, content) {
   return {
-    cls: ['language-' + type],
+    cls: ['language-' + lang],
+    lang: lang,
     content: escape(content)
   }
 }

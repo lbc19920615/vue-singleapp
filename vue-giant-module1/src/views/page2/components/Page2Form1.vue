@@ -19,6 +19,12 @@
           sort
           :show-btns="false"
         ></vue-json-editor>
+        <div v-if="doForm1.remoteSelect && doForm1.remoteSelect.length > 0">
+          <my-highlight
+            :language="doForm1.remoteSelect[0].lang"
+            :content="doForm1.remoteSelect[0].content"
+          ></my-highlight>
+        </div>
       </el-col>
     </el-row>
     <div class="a-layout-row">
@@ -31,12 +37,17 @@
 <script>
 import VueJsonEditor from 'vue-json-editor'
 import SubmitButton from '@/components/SubmitButton'
+import {docForm1Mixin} from '@/views/page2/mixins/docForm1'
+import MyHighlight from '@/components/Myhighlight/MyHighlight'
 
 const ComponentName = 'Page2Form1'
 
 export default {
   name: ComponentName,
-  components: {VueJsonEditor, SubmitButton},
+  components: {MyHighlight, VueJsonEditor, SubmitButton},
+  mixins: [
+    docForm1Mixin
+  ],
   data() {
     return {
       formSchema: {

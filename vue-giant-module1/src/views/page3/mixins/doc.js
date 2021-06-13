@@ -1,18 +1,4 @@
-import escape from 'lodash/escape'
-
-/**
- * 注册一个language
- * @param lang
- * @param content
- * @returns {{cls: string[], lang, content}}
- */
-function registerLanguage(lang, content) {
-  return {
-    cls: ['language-' + lang],
-    lang: lang,
-    content: escape(content)
-  }
-}
+import {registerLanguage} from '@/utils/highlight'
 
 export const docMixin = {
   data() {

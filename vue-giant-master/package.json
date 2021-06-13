@@ -11,6 +11,7 @@
     "axios": "^0.19.2",
     "core-js": "^3.6.4",
     "element-ui": "^2.4.5",
+    "json5": "^2.2.0",
     "mockjs": "^1.1.0",
     "nprogress": "^0.2.0",
     "qiankun": "^2.4.2",

@@ -16,8 +16,6 @@
         <Page2Form1></Page2Form1>
       </el-tab-pane>
     </el-tabs>
-
-    <router-view></router-view>
   </com-page>
 </template>
 

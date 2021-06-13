@@ -4,42 +4,20 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import './plugins/element.js'
 import '@/utils/permission.js'
+
+import './plugins/element.js'
+import './plugins/ncForm'
+import './plugins/views'
+import {bootstrapLoggerPlugin} from '@/plugins/logger'
+
+const isProduction = process.env.NODE_ENV === 'production'
 
 Vue.config.productionTip = false
 
-import VueLogger from 'vuejs-logger'
-const isProduction = process.env.NODE_ENV === 'production'
-
-const options = {
-  isEnabled: true,
-  logLevel: isProduction ? 'error' : 'debug',
-  stringifyArguments: false,
-  showLogLevel: true,
-  showMethodName: true,
-  separator: '|',
-  showConsoleColors: true
-}
-
-Vue.use(VueLogger, options)
-
-// Form start
-import vueNcform from '@ncform/ncform/dist/vueNcform'
-import ncformStdComps from '@ncform/ncform-theme-elementui'
-import ncformCusComps from '@/components/NcFormCustom'
-import ncformCusRules from '@/components/NcFormRules'
-
-Vue.use(vueNcform, {
-  extComponents: {
-    ...ncformStdComps,
-    ...ncformCusComps
-  },
-  extRules: [
-    ncformCusRules
-  ]
-})
-// Form end
+// start logger
+bootstrapLoggerPlugin(Vue, isProduction)
+// end logger
 
 let instance = null
 

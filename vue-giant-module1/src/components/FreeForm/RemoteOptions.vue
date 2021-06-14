@@ -1,6 +1,6 @@
 <template>
   <el-select
-    :value="value"
+    :value="innerVal"
     v-bind="$attrs"
     :clearable="clearable"
     @change="onChange"
@@ -9,7 +9,7 @@
       v-for="(option, optionIndex) in options"
       :key="optionIndex"
       :label="option[labelKey]"
-      :value="option[value]"
+      :value="option[valueKey]"
     />
   </el-select>
 </template>
@@ -32,17 +32,34 @@ export default {
     valueKey: {
       type: String,
       default: 'value'
+    },
+    autoReq: {
+      type: Boolean,
+      default: true
     }
   },
   data() {
     return {
+      innerVal: undefined,
       options: []
     }
   },
+  watch: {
+    value() {
+      this.innerVal = this.value
+    }
+  },
   mounted() {
-    this.remoteMethod()
+    this.innerVal = this.value
+    if (this.autoReq) {
+      this.remoteMethod()
+    }
   },
   methods: {
+    fetch() {
+      this.innerVal = null
+      this.remoteMethod()
+    },
     async remoteMethod() {
       // eslint-disable-next-line no-unused-vars
       const [err, ret] = await to(this.requestMethod())
@@ -50,9 +67,9 @@ export default {
       this.options = ret
     },
     onChange(v) {
-      // this.$emit('input', v)
-      // let selectedItem = this.options.find(item => item.value === v)
-      // this.$emit('select', selectedItem)
+      this.$emit('input', v)
+      const selectedItem = this.options.find(item => item.value === v)
+      this.$emit('select', selectedItem)
     }
   }
 }

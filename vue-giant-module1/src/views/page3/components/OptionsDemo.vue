@@ -10,11 +10,28 @@ $sel: "." + $tag;
   <div class="options-demo">
     <el-row type="flex">
       <el-col :span="12">
-        <RemoteOptions
-          :request-method="myRequestMethod"
-          label-key="name"
-          value-key="id"
-        ></RemoteOptions>
+        <div>
+          <h4>link select1</h4>
+          <RemoteOptions
+            v-model="formModel.option1"
+            :request-method="myRequestMethod"
+            label-key="name"
+            value-key="id"
+            @select="onSelectOptions1"
+          ></RemoteOptions>
+        </div>
+        <div>
+          <h4>link form select1</h4>
+          <RemoteOptions
+            ref="subSelect"
+            v-model="formModel.option2"
+            :request-method="myRequestMethod"
+            label-key="name"
+            value-key="id"
+            :auto-req="false"
+            @select="onSelectOptions1"
+          ></RemoteOptions>
+        </div>
       </el-col>
       <el-col :span="12">
         <my-highlight
@@ -43,13 +60,27 @@ import MyHighlight from '@/components/Myhighlight/MyHighlight'
 import RemoteOptions from '@/components/FreeForm/RemoteOptions'
 import FreeTable from '@/components/FreeTable'
 
+const linkOptionsMixin = {
+  methods: {
+    onSelectOptions1(selected) {
+      console.log('onSelectOptions1', selected)
+      this.$refs.subSelect.fetch()
+    }
+  }
+}
+
 export default {
   name: 'OptionsDemo',
   components: {RemoteOptions, MyHighlight, FreeTable},
   mixins: [
+    linkOptionsMixin
   ],
   data() {
     return {
+      formModel: {
+        option1: '',
+        option2: ''
+      },
       docOptions: {
         basicColumn: [
           {label: '参数', prop: 'prop'},
@@ -71,6 +102,16 @@ export default {
             prop: 'request-method',
             desc: '远程搜索方法',
             type: 'function'
+          },
+          {
+            prop: 'auto-req',
+            desc: '设置自动开启请求',
+            type: 'Boolean'
+          },
+          {
+            prop: 'clearable',
+            desc: '设置clearable',
+            type: 'Boolean'
           }
         ],
         highlights: [
@@ -89,7 +130,11 @@ value-key="id"
         const options = [
           {
             id: '111',
-            name: '1111'
+            name: '111'
+          },
+          {
+            id: '222',
+            name: '222'
           }
         ]
         setTimeout(() => {

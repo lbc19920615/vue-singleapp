@@ -16,6 +16,9 @@
       <el-tab-pane label="input">
         <input-demo></input-demo>
       </el-tab-pane>
+      <el-tab-pane label="dialog">
+        <dialog-demo></dialog-demo>
+      </el-tab-pane>
     </el-tabs>
   </com-page>
 </template>
@@ -23,8 +26,9 @@
 <script>
 import OptionsDemo from '@/views/page3/components/OptionsDemo'
 import InputDemo from '@/views/page3/components/InputDemo'
+import DialogDemo from '@/views/page3/components/DialogDemo'
 export default {
   name: 'Page3',
-  components: {InputDemo, OptionsDemo}
+  components: {DialogDemo, InputDemo, OptionsDemo}
 }
 </script>

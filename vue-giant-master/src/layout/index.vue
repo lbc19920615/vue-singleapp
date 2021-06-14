@@ -17,8 +17,8 @@ import MainMenu from '@/layout/components/Menu'
 import MainLogin from '@/layout/components/MainLogin'
 // 导入乾坤函数
 import { registerMicroApps, start } from 'qiankun'
-import axios from '@/utils/request'
-import {alUtils} from '../module/al'
+import { request } from '@/utils/request'
+import {alUtils} from '@/module/al'
 
 export default {
   name: 'Layout',
@@ -43,7 +43,7 @@ export default {
       data: this.$store.getters,
       fns: [],
       prototype: [
-        { name: '$axios', value: axios },
+        { name: '$axios', value: request },
         { name: '$alUtils', value: alUtils }
       ]
     }

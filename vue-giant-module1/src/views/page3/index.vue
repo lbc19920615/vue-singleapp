@@ -19,6 +19,9 @@
       <el-tab-pane label="dialog">
         <dialog-demo></dialog-demo>
       </el-tab-pane>
+      <el-tab-pane label="upload">
+        <upload-demo></upload-demo>
+      </el-tab-pane>
     </el-tabs>
   </com-page>
 </template>
@@ -27,8 +30,9 @@
 import OptionsDemo from '@/views/page3/components/OptionsDemo'
 import InputDemo from '@/views/page3/components/InputDemo'
 import DialogDemo from '@/views/page3/components/DialogDemo'
+import UploadDemo from '@/views/page3/components/UploadDemo'
 export default {
   name: 'Page3',
-  components: {DialogDemo, InputDemo, OptionsDemo}
+  components: {UploadDemo, DialogDemo, InputDemo, OptionsDemo}
 }
 </script>

@@ -1,5 +1,5 @@
 <style lang="scss">
-$tag: "dialog-demo";
+$tag: "upload-demo";
 $sel: "." + $tag;
 
 #{$sel} {
@@ -7,14 +7,10 @@ $sel: "." + $tag;
 </style>
 
 <template>
-  <div class="dialog-demo">
+  <div class="upload-demo">
     <el-row type="flex">
       <el-col :span="12">
-        <el-button @click="detailVisible = true">detailVisible</el-button>
-        <cus-detail-dialog
-          :visible.sync="detailVisible"
-          :render="render"
-        ></cus-detail-dialog>
+        <mutli-file-upload></mutli-file-upload>
       </el-col>
       <el-col :span="12">
         <my-highlight
@@ -41,7 +37,7 @@ $sel: "." + $tag;
 import {registerLanguage} from '@/utils/highlight'
 import MyHighlight from '@/components/Myhighlight/MyHighlight'
 import FreeTable from '@/components/FreeTable'
-import CusDetailDialog from '@/components/CusDialog/CusDetailDialog'
+import MutliFileUpload from '@/components/CusUpload/MutliFileUpload'
 
 const input1Mixin = {
   data() {
@@ -68,22 +64,10 @@ const input1Mixin = {
 }
 
 export default {
-  name: 'DialogDemo',
-  components: { CusDetailDialog, MyHighlight, FreeTable},
+  name: 'UploadDemo',
+  components: {MutliFileUpload, MyHighlight, FreeTable},
   mixins: [
     input1Mixin
-  ],
-  data() {
-    return {
-      detailVisible: false
-    }
-  },
-  methods: {
-    render(h, ctx) {
-      return (
-        <div>sdsdsdsds</div>
-      )
-    }
-  }
+  ]
 }
 </script>
